@@ -1,0 +1,73 @@
+.navbarContainer {
+  height: calc(100vh - 55px);
+  width: 280px;
+  background-color: rgb(77, 74, 74);
+  transition: width 250ms ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 25px;
+}
+
+.navOpen {
+  width: 70px;
+  align-items: center;
+}
+
+.navOpen .navlink {
+  justify-content: center;
+}
+
+.navOpen .linkname {
+  display: none;
+}
+
+.navbarContainer button svg {
+  transition: transform 650ms ease;
+}
+
+.navOpen button svg {
+  transform: rotate(180deg);
+}
+
+.navlink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  height: 55px;
+  color: white;
+}
+
+.togglebutton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  align-self: flex-end;
+}
+
+.linkname {
+  margin-left: 15px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .navbarContainer {
+    position: absolute;
+  }
+
+  .navOpen {
+    width: 50px;
+  }
+
+  .togglebutton {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+  }
+}

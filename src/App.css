@@ -1,26 +1,10 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
   color: white;
 }
 
@@ -28,11 +12,72 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.width100Per {
+  width: 100%;
+}
+
+.height100Per {
+  height: 100%;
+}
+
+.width100vw {
+  width: 100vw;
+}
+
+.displayFlex {
+  display: flex;
+}
+
+.alignItemCenter {
+  align-items: center;
+}
+
+.justifyContentCenter {
+  justify-content: center;
+}
+
+.justifyContentSpaceBetween {
+  justify-content: space-between;
+}
+
+.flexGrow1 {
+  flex-grow: 1;
+}
+
+.font22 {
+  font-size: calc(10px + 1vmin);
+}
+
+.font30 {
+  font-size: calc(10px + 2vmin);
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexDirectionColumn {
+  flex-direction: column;
+}
+
+.marginLeft10 {
+  margin-left: 10px;
+}
+
+.marginTop10 {
+  margin-top: 10px;
+}
+
+.padding5 {
+  padding: 5px;
+}
+
+.cursorPointer {
+  cursor: pointer;
 }
