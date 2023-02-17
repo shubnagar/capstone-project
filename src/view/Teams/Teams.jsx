@@ -12,6 +12,7 @@ const Teams = () => {
   const [columnDefs, setColumnDefs] = useState([
     { field: "name", filter: true },
     { field: "email", filter: true },
+    { field: "username", filter: true },
     { field: "phone" },
   ]);
 
@@ -28,10 +29,10 @@ const Teams = () => {
   }, []);
 
   return (
-    <section className="flexCenter flexDirectionColumn height100Per">
-      <div
+    <main className="flexCenter flexDirectionColumn height100Per">
+      <section
         className="ag-theme-alpine-dark"
-        style={{ minWidth: 620, minHeight: 600 }}
+        style={{ minWidth: 810, minHeight: 600 }}
       >
         <AgGridReact
           ref={gridRef}
@@ -45,8 +46,8 @@ const Teams = () => {
         <button className="marginTop10 padding5" onClick={buttonListener}>
           Push Me
         </button>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 };
 

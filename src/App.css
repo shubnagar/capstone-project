@@ -66,6 +66,10 @@
   flex-direction: column;
 }
 
+.alignSelfEnd {
+  align-self: flex-end;
+}
+
 .marginLeft10 {
   margin-left: 10px;
 }

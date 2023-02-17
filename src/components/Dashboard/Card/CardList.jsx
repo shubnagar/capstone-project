@@ -47,11 +47,11 @@ const CardList = () => {
   }
 
   return (
-    <div className={styles.listContainer}>
+    <section className={styles.listContainer}>
       {data.map((item) => (
         <Card key={item.id} item={item} editAmountValue={editAmountValue} />
       ))}
-    </div>
+    </section>
   );
 };
 

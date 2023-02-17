@@ -3,9 +3,9 @@ import { CardList } from '../../components'
 
 const Dashboard = () => {
   return (
-    <section>
+    <main>
       <CardList/>
-    </section>
+    </main>
   )
 }
 

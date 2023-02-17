@@ -23,7 +23,7 @@
 }
 
 .navbarContainer button svg {
-  transition: transform 650ms ease;
+  transition: transform 550ms ease;
 }
 
 .navOpen button svg {
