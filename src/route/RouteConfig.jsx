@@ -7,6 +7,7 @@ import {
 import { Layout } from "../components";
 import { routeData } from "../constant/routeData";
 import SwitchModeContext from "../context/SwitchModeContext";
+import ThemeContextProvider from "../context/ThemeContext";
 import Charts from "../view/Charts/Charts";
 import Create from "../view/Create/Create";
 import Dashboard from "../view/Dashboard/Dashboard";
@@ -28,16 +29,18 @@ function getElement(name) {
 }
 
 const AppOutlet = () => (
-  <SwitchModeContext>
-    <Layout>
-      <Outlet />
-    </Layout>
-  </SwitchModeContext>
+  <ThemeContextProvider>
+    <SwitchModeContext>
+      <Layout>
+        <Outlet />
+      </Layout>
+    </SwitchModeContext>
+  </ThemeContextProvider>
 );
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<AppOutlet />}> 
+    <Route element={<AppOutlet />}>
       {routeData.map((route) => (
         <Route
           key={route.id}

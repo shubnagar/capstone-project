@@ -1,52 +1,33 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
+import { useMutation } from "react-query";
+import { addUserData } from "../../apiServices/query";
+import {
+  useYupValidationResolver,
+  validationSchema,
+} from "../../constant/config";
 import styles from "./Create.module.css";
-
-const useYupValidationResolver = (validationSchema) =>
-  useCallback(
-    async (data) => {
-      try {
-        const values = await validationSchema.validate(data, {
-          abortEarly: false,
-        });
-        return {
-          values,
-          errors: {},
-        };
-      } catch (errors) {
-        return {
-          values: {},
-          errors: errors.inner.reduce(
-            (allErrors, currentError) => ({
-              ...allErrors,
-              [currentError.path]: {
-                type: currentError.type ?? "validation",
-                message: currentError.message,
-              },
-            }),
-            {}
-          ),
-        };
-      }
-    },
-    [validationSchema]
-  );
-
-const validationSchema = yup.object({
-  name: yup.string().required(),
-  email: yup.string().email().required(),
-  username: yup.string().required(),
-  phone: yup.string().required().max(10).min(10),
-});
+import CreateInput from "./CreateInput";
 
 const AddPeopleForm = () => {
   const resolver = useYupValidationResolver(validationSchema);
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors },
-  } = useForm({ resolver });
+  } = useForm({ mode: "onTouched", resolver });
+
+  const { mutate, isLoading } = useMutation((data) => addUserData(data));
+
+  function handleFormSubmit(data) {
+    mutate(
+      { ...data, isPublic: true },
+      {
+        onSuccess: () => reset(),
+      }
+    );
+  }
 
   return (
     <section
@@ -55,34 +36,36 @@ const AddPeopleForm = () => {
       <h3>Add People Form</h3>
       <form
         className={styles.createForm}
-        onSubmit={handleSubmit((data) => console.log(data))}
+        onSubmit={handleSubmit(handleFormSubmit)}
+        style={{ pointerEvents: isLoading ? "none" : "auto" }}
       >
-        <input
+        <CreateInput
           placeholder="Name"
-          className={styles.createInput}
-          {...register("name")}
+          register={register("name")}
+          errorMsg={errors.name?.message}
         />
-        <p className={styles.errors}>{errors.name?.message}</p>
-        <input
+        <CreateInput
           placeholder="Email"
-          className={styles.createInput}
-          {...register("email")}
+          register={register("email")}
+          errorMsg={errors.email?.message}
         />
-        <p className={styles.errors}>{errors.email?.message}</p>
-        <input
+        <CreateInput
           placeholder="Username"
-          className={styles.createInput}
-          {...register("username")}
+          register={register("username")}
+          errorMsg={errors.username?.message}
         />
-        <p className={styles.errors}>{errors.username?.message}</p>
-        <input
+        <CreateInput
           placeholder="Phone Number"
           type="number"
-          className={styles.createInput}
-          {...register("phone")}
+          register={register("phone")}
+          errorMsg={errors.phone?.message}
         />
-        <p className={styles.errors}>{errors.phone?.message}</p>
-        <input className={`marginTop10 ${styles.addButton}`} type="submit" />
+        <button
+          disabled={isLoading}
+          className={`marginTop10 ${styles.addButton}`}
+        >
+          {isLoading ? "Loading..." : "Create"}
+        </button>
       </form>
     </section>
   );

@@ -1,22 +1,15 @@
 import React from "react";
 import styles from "./Layout.module.css";
-import {
-  useIsEditable,
-  useSetIsEditable,
-} from "../../../context/SwitchModeContext";
 
-const SwitchButton = () => {
-  const isEditable = useIsEditable();
-  const setIsEditable = useSetIsEditable();
-
+const SwitchButton = ({ value, set, icon }) => {
   return (
     <div
-      onClick={() => setIsEditable(!isEditable)}
+      onClick={() => set(!value)}
       className={`${styles.switchButtonContainer} ${
-        isEditable ? styles.switchon : ""
+        value ? styles.switchon : ""
       }`}
     >
-      <div className={styles.circle} />
+      <div className={`flexCenter ${styles.circle}`}>{icon}</div>
     </div>
   );
 };

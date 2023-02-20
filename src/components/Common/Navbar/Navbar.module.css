@@ -1,7 +1,7 @@
 .navbarContainer {
   height: calc(100vh - 55px);
   width: 280px;
-  background-color: rgb(77, 74, 74);
+  background-color: var(--nav-color);
   transition: width 250ms ease-out;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@
   width: 100%;
   padding: 10px;
   height: 55px;
-  color: white;
+  color: var(--font-color);
 }
 
 .togglebutton {

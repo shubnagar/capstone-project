@@ -1,11 +1,38 @@
+:root {
+  --primary-color: #282c34;
+  --nav-color: rgb(77, 74, 74);
+  --font-color: #fff;
+  --bg-color: #000000;
+  --heading-color: rgb(9, 57, 91);
+  --selected-color: rgba(0,0,0,0.4)
+}
+
+[data-theme="dark"] {
+  --primary-color: #282c34;
+  --nav-color: rgb(77, 74, 74);
+  --font-color: #fff;
+  --bg-color: #000000;
+  --heading-color: rgb(9, 57, 91);
+  --selected-color: rgba(0,0,0,0.4)
+}
+
+[data-theme="light"] {
+  --primary-color: #67676a;
+  --nav-color: #b4a9a9;
+  --font-color: #000000;
+  --bg-color: #fff;
+  --heading-color: #ffffff;
+  --selected-color: rgba(255,255,255,0.4)
+}
+
 .App-header {
-  background-color: #282c34;
+  background-color: var(--primary-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* font-size: calc(10px + 2vmin); */
-  color: white;
+  color: var(--font-color);
 }
 
 .App-link {

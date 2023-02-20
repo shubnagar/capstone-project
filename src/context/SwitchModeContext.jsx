@@ -3,29 +3,26 @@ import React, { createContext, useContext, useState } from "react";
 const initialValue = false;
 
 const CreateSwitchModeContextValue = createContext(initialValue);
-const CreateSwitchModeContextFunction = createContext(initialValue);
 
 const SwitchModeContext = ({ children }) => {
   const [isEditable, setIsEditable] = useState(initialValue);
 
+  const value = { isEditable, setIsEditable };
   return (
-    <CreateSwitchModeContextValue.Provider value={isEditable}>
-      <CreateSwitchModeContextFunction.Provider value={setIsEditable}>
-        {children}
-      </CreateSwitchModeContextFunction.Provider>
+    <CreateSwitchModeContextValue.Provider value={value}>
+      {children}
     </CreateSwitchModeContextValue.Provider>
   );
 };
 
 export const useIsEditable = () => {
-  const value = useContext(CreateSwitchModeContextValue);
-  return value;
+  const { isEditable } = useContext(CreateSwitchModeContextValue);
+  return isEditable;
 };
 
 export const useSetIsEditable = () => {
-  const fn = useContext(CreateSwitchModeContextFunction);
-  const optimizedFn = React.useCallback(fn, [fn]);
-  return optimizedFn;
+  const { setIsEditable } = useContext(CreateSwitchModeContextValue);
+  return setIsEditable;
 };
 
 export default SwitchModeContext;

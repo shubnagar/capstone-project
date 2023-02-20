@@ -7,7 +7,7 @@ const NavItem = ({ route }) => {
   return (
     <NavLink
       style={({ isActive }) =>
-        isActive ? { backgroundColor: "rgba(0,0,0,0.3)" } : undefined
+        isActive ? { backgroundColor: "var(--selected-color)" } : undefined
       }
       className={styles.navlink}
       key={route.id}

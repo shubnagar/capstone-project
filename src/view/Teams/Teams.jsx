@@ -1,51 +1,20 @@
-import React, { useState, useRef, useMemo, useCallback } from "react";
-import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
-import { getUserData } from "../../apiServices/query";
-import { useQuery } from "react-query";
+import { GridComponent } from "../../components";
+import { useCurrentTheme } from "../../context/ThemeContext";
 
 const Teams = () => {
-  const gridRef = useRef();
-  const { data } = useQuery("users", getUserData);
-
-  const [columnDefs, setColumnDefs] = useState([
-    { field: "name", filter: true },
-    { field: "email", filter: true },
-    { field: "username", filter: true },
-    { field: "phone" },
-  ]);
-
-  const defaultColDef = useMemo(() => ({
-    sortable: true,
-  }));
-
-  const cellClickedListener = useCallback((event) => {
-    console.log("cellClicked", event);
-  }, []);
-
-  const buttonListener = useCallback((e) => {
-    gridRef.current.api.deselectAll();
-  }, []);
+  const currentTheme = useCurrentTheme();
 
   return (
     <main className="flexCenter flexDirectionColumn height100Per">
       <section
-        className="ag-theme-alpine-dark"
+        className={`${
+          currentTheme === "dark" ? "ag-theme-alpine-dark" : "ag-theme-alpine"
+        }`}
         style={{ minWidth: 810, minHeight: 600 }}
       >
-        <AgGridReact
-          ref={gridRef}
-          rowData={data}
-          columnDefs={columnDefs}
-          defaultColDef={defaultColDef}
-          animateRows={true}
-          rowSelection="multiple"
-          onCellClicked={cellClickedListener}
-        />
-        <button className="marginTop10 padding5" onClick={buttonListener}>
-          Push Me
-        </button>
+        <GridComponent />
       </section>
     </main>
   );

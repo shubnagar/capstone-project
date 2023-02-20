@@ -4,14 +4,14 @@
   align-items: center;
   justify-content: space-between;
   padding: 15px;
-  background-color: rgb(9, 57, 91);
+  background-color: var(--heading-color);
 }
 
 .switchButtonContainer {
   height: 40px;
   width: 60px;
   border-radius: 20px;
-  background-color: rgb(77, 74, 74);
+  background-color: var(--nav-color);
   position: relative;
   cursor: pointer;
   margin-left: 10px;
@@ -19,7 +19,7 @@
 }
 
 .circle {
-  background-color: white;
+  background-color: var(--font-color);
   position: absolute;
   width: 30px;
   height: 30px;
@@ -29,10 +29,14 @@
   transition: transform 300ms ease-in-out;
 }
 
+.circle svg {
+  color: var(--bg-color);
+}
+
 .switchon {
   background-color: rgb(63, 134, 72);
 }
 
-.switchon .circle{
+.switchon .circle {
   transform: translateX(20px);
 }
