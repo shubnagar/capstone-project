@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from "react";
 
 const initialValue = false;
 
-const CreateSwitchModeContextValue = createContext(initialValue);
+export const CreateSwitchModeContextValue = createContext(initialValue);
 
 const SwitchModeContext = ({ children }) => {
   const [isEditable, setIsEditable] = useState(initialValue);

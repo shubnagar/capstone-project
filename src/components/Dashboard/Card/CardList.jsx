@@ -8,7 +8,7 @@ import {
 import Card from "./Card";
 import styles from "./Card.module.css";
 
-const listData = [
+export const listData = [
   {
     id: 1,
     name: "Account Balance",

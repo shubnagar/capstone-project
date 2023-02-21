@@ -29,6 +29,7 @@ const CardInput = ({ amount, editAmountValue, id }) => {
         className={styles.cardinput}
         type="number"
         ref={inputRef}
+        data-testid="numberInput"
       />
       <FaCheckCircle onClick={handleSubmit} className="font30 marginLeft10" />
     </>

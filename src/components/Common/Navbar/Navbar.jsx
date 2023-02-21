@@ -31,6 +31,7 @@ const Navbar = () => {
   return (
     <nav
       className={`${styles.navbarContainer} ${isOpen ? styles.navOpen : ""}`}
+      data-testid="nav_parent"
     >
       <section className="width100Per">
         {routeData.map((route) => (

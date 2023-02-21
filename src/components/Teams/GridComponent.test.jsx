@@ -31,7 +31,7 @@ describe("Grid component", () => {
     userEvent.click(clearSelectionbutton);
   });
 
-  test("failure query component", async () => {
+  test("Testing failed api grid component", async () => {
     let errorCode = 404;
     server.use(
       rest.get(`${API_URL}/user`, (req, res, ctx) => {
