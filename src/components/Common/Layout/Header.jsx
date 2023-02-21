@@ -15,7 +15,7 @@ const Header = () => {
   const toggleCurrentTheme = useSetTheme();
 
   return (
-    <header className={`width100Per ${styles.headerContainer}`}>
+    <header id="header" className={`width100Per ${styles.headerContainer}`}>
       <h3 className="font22">Context Playground</h3>
       <div className="displayFlex alignItemCenter">
         <SwitchButton

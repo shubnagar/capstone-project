@@ -4,7 +4,7 @@ import { getUserData } from "../../apiServices/query";
 import { useQuery } from "react-query";
 
 const GridComponent = memo(() => {
-  const { data } = useQuery("users", getUserData);
+  const { data, error } = useQuery("users", getUserData);
 
   const gridRef = useRef();
 
@@ -26,7 +26,9 @@ const GridComponent = memo(() => {
   const buttonListener = useCallback((e) => {
     gridRef.current.api.deselectAll();
   }, []);
-  return (
+  return error ? (
+    <h1>{error.message}</h1>
+  ) : (
     <>
       <AgGridReact
         ref={gridRef}

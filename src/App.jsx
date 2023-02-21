@@ -2,7 +2,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
 import Route from "./route/Route";
 
-const queryClient = new QueryClient({
+export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,

@@ -63,6 +63,7 @@ const AddPeopleForm = () => {
         <button
           disabled={isLoading}
           className={`marginTop10 ${styles.addButton}`}
+          onClick={handleSubmit(handleFormSubmit)}
         >
           {isLoading ? "Loading..." : "Create"}
         </button>

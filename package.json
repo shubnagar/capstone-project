@@ -44,5 +44,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/coverage/**"
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/(?!axios|ag-grid-community)(.*)"
+    ]
+  },
+  "devDependencies": {
+    "msw": "^1.0.1"
   }
 }
