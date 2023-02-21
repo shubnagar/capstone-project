@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/prefer-screen-queries */
 import { screen, waitForElementToBeRemoved } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { rest } from "msw";
@@ -41,10 +42,11 @@ describe("Grid component", () => {
     // eslint-disable-next-line testing-library/render-result-naming-convention
     const result = renderWithClient(<GridComponent />);
 
-    // eslint-disable-next-line testing-library/prefer-screen-queries
-    expect(
-      // eslint-disable-next-line testing-library/prefer-screen-queries
-      await result.findByText(`Request failed with status code ${errorCode}`)
-    ).toBeInTheDocument();
+    const findAllErrors = await result.findAllByText(
+      `Request failed with status code ${errorCode}`
+    );
+
+    expect(findAllErrors[0]).toBeInTheDocument();
+    expect(findAllErrors[1]).toBeInTheDocument();
   });
 });

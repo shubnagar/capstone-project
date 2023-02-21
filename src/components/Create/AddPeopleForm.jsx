@@ -8,6 +8,7 @@ import {
 } from "../../constant/config";
 import styles from "./Create.module.css";
 import CreateInput from "./CreateInput";
+import toast, { Toaster } from "react-hot-toast";
 
 const AddPeopleForm = () => {
   const resolver = useYupValidationResolver(validationSchema);
@@ -24,7 +25,13 @@ const AddPeopleForm = () => {
     mutate(
       { ...data, isPublic: true },
       {
-        onSuccess: () => reset(),
+        onSuccess: () => {
+          toast.success("Created record successfully");
+          return reset();
+        },
+        onError: () => {
+          toast.error("Something went wrong");
+        }
       }
     );
   }
@@ -68,6 +75,7 @@ const AddPeopleForm = () => {
           {isLoading ? "Loading..." : "Create"}
         </button>
       </form>
+      <Toaster />
     </section>
   );
 };

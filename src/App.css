@@ -4,16 +4,7 @@
   --font-color: #fff;
   --bg-color: #000000;
   --heading-color: rgb(9, 57, 91);
-  --selected-color: rgba(0,0,0,0.4)
-}
-
-[data-theme="dark"] {
-  --primary-color: #282c34;
-  --nav-color: rgb(77, 74, 74);
-  --font-color: #fff;
-  --bg-color: #000000;
-  --heading-color: rgb(9, 57, 91);
-  --selected-color: rgba(0,0,0,0.4)
+  --selected-color: rgba(0, 0, 0, 0.4);
 }
 
 [data-theme="light"] {
@@ -22,7 +13,7 @@
   --font-color: #000000;
   --bg-color: #fff;
   --heading-color: #ffffff;
-  --selected-color: rgba(255,255,255,0.4)
+  --selected-color: rgba(255, 255, 255, 0.4);
 }
 
 .App-header {
