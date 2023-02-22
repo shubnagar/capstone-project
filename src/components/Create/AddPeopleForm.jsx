@@ -27,11 +27,12 @@ const AddPeopleForm = () => {
       {
         onSuccess: () => {
           toast.success("Created record successfully");
+          document.activeElement.blur();
           return reset();
         },
         onError: () => {
           toast.error("Something went wrong");
-        }
+        },
       }
     );
   }
