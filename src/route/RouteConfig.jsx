@@ -11,6 +11,7 @@ import ThemeContextProvider from "../context/ThemeContext";
 import Charts from "../view/Charts/Charts";
 import Create from "../view/Create/Create";
 import Dashboard from "../view/Dashboard/Dashboard";
+import ErrorPage from "../view/Error/ErrorPage";
 import Teams from "../view/Teams/Teams";
 
 function getElement(name) {
@@ -40,7 +41,7 @@ const AppOutlet = () => (
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<AppOutlet />}>
+    <Route element={<AppOutlet />} errorElement={<ErrorPage errorText="Page not found"/>}>
       {routeData.map((route) => (
         <Route
           key={route.id}

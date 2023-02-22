@@ -1,7 +1,7 @@
 import React from "react";
 import {  render, screen } from "@testing-library/react";
 import Card from "./Card";
-import { listData } from "./CardList";
+import { listData } from "../../../constant/config";
 
 const fn = jest.fn();
 

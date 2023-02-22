@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import { listData } from "../../../constant/config";
 import { CreateSwitchModeContextValue } from "../../../context/SwitchModeContext";
-import CardList, { listData } from "./CardList";
+import CardList from "./CardList";
 
 describe("CardList component", () => {
   test("Rendering Cardlist", async () => {

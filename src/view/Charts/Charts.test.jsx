@@ -20,7 +20,7 @@ describe("Charts View Component", () => {
       </ThemeContextValue.Provider>
     );
     expect(
-      screen.getByText("Browser market shares in March, 2022")
+      screen.getByText("Browser market shares in March, 2023")
     ).toBeInTheDocument();
   });
 });
