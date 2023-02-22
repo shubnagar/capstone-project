@@ -8,9 +8,9 @@ npm start - Run locally
 npm build - production build
 
 
-For Context Api -
+For Optimized Context Api -
 
-Two methods that are used are inspired by the docs written by Kent C Dodds
+Two methods that are used, are inspired by the docs written by Kent C Dodds
 
 1 - https://kentcdodds.com/blog/how-to-optimize-your-context-value
 
