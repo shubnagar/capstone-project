@@ -50,6 +50,9 @@
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/node_modules/**",
+      "!**/src/test/**",
+      "!src/index.js",
+      "!src/reportWebVitals.js",
       "!**/coverage/**"
     ],
     "transformIgnorePatterns": [

@@ -1,5 +1,5 @@
 import React from "react";
-import { AddPeople } from "../../components";
+import AddPeople from '../../components/Create/AddPeople'
 
 const Create = () => {
   return (

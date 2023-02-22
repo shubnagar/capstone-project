@@ -1,6 +1,6 @@
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
-import { GridComponent } from "../../components";
+import GridComponent from '../../components/Teams/GridComponent'
 import { useCurrentTheme } from "../../context/ThemeContext";
 
 const Teams = () => {

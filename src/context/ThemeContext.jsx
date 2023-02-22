@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from "react";
 const initialValue =
   document.documentElement.getAttribute("data-theme") || "dark";
 
-const ThemeContextValue = createContext(initialValue);
+export const ThemeContextValue = createContext(initialValue);
 const ThemeContextFn = createContext(null);
 
 const ThemeContextProvider = ({ children }) => {

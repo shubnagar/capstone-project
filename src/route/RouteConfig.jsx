@@ -4,7 +4,7 @@ import {
   Outlet,
   Route,
 } from "react-router-dom";
-import { Layout } from "../components";
+import Layout from "../components/Common/Layout/Layout";
 import { routeData } from "../constant/routeData";
 import SwitchModeContext from "../context/SwitchModeContext";
 import ThemeContextProvider from "../context/ThemeContext";

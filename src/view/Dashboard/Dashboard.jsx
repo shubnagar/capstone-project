@@ -1,5 +1,5 @@
 import React from 'react'
-import { CardList } from '../../components'
+import CardList from '../../components/Dashboard/Card/CardList'
 
 const Dashboard = () => {
   return (
