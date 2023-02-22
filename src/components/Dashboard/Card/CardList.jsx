@@ -1,39 +1,7 @@
 import React, { useState } from "react";
-import {
-  FaCheckCircle,
-  FaDollarSign,
-  FaUserTie,
-  FaUserClock,
-} from "react-icons/fa";
+import { listData } from "../../../constant/config";
 import Card from "./Card";
 import styles from "./Card.module.css";
-
-export const listData = [
-  {
-    id: 1,
-    name: "Account Balance",
-    amount: 30211.28,
-    icon: FaUserTie,
-  },
-  {
-    id: 2,
-    name: "Pending",
-    amount: -3021,
-    icon: FaUserClock,
-  },
-  {
-    id: 3,
-    name: "Processes",
-    amount: 10261.8,
-    icon: FaCheckCircle,
-  },
-  {
-    id: 4,
-    name: "Net Worth",
-    amount: 100007,
-    icon: FaDollarSign,
-  },
-];
 
 const CardList = () => {
   const [data, setData] = useState(listData);
